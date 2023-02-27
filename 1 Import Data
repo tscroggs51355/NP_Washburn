@@ -1,3 +1,5 @@
+
+
 module load SRA-Toolkit/2.11.1-centos_linux64 #Make note of the version that you are using 
 fastq-dump --split-files --gzip SRRNNNNN #fill in the NNNNN with the SRR number that you are using 
 
