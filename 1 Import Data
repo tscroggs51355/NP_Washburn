@@ -11,5 +11,61 @@
 #SBATCH --mail-user=taylor.strayhorn@uga.edu   # Where to send mail
 #SBATCH --export=NONE                       # do not load any env variables to compute node
 
+module load SRA-Toolkit/2.11.1-centos_linux64 #Make note of the version that you are using 
 
-
+fastq-dump --split-files --gzip SRR7989734
+fastq-dump --split-files --gzip SRR7989735
+fastq-dump --split-files --gzip SRR7989736
+fastq-dump --split-files --gzip SRR7989737
+fastq-dump --split-files --gzip SRR7989738
+fastq-dump --split-files --gzip SRR7989739
+fastq-dump --split-files --gzip SRR7989740
+fastq-dump --split-files --gzip SRR7989741
+fastq-dump --split-files --gzip SRR7989742
+fastq-dump --split-files --gzip SRR7989743
+fastq-dump --split-files --gzip SRR7989744
+fastq-dump --split-files --gzip SRR7989745
+fastq-dump --split-files --gzip SRR7989746
+fastq-dump --split-files --gzip SRR7989747
+fastq-dump --split-files --gzip SRR7989748
+fastq-dump --split-files --gzip SRR7989749
+fastq-dump --split-files --gzip SRR7989750
+fastq-dump --split-files --gzip SRR7989751
+fastq-dump --split-files --gzip SRR7989752
+fastq-dump --split-files --gzip SRR7989753
+fastq-dump --split-files --gzip SRR7989754
+fastq-dump --split-files --gzip SRR7989755
+fastq-dump --split-files --gzip SRR7989756
+fastq-dump --split-files --gzip SRR7989757
+fastq-dump --split-files --gzip SRR7989758
+fastq-dump --split-files --gzip SRR7989759
+fastq-dump --split-files --gzip SRR7989760
+fastq-dump --split-files --gzip SRR7989761
+fastq-dump --split-files --gzip SRR7989762
+fastq-dump --split-files --gzip SRR7989763
+fastq-dump --split-files --gzip SRR7989764
+fastq-dump --split-files --gzip SRR7989765
+fastq-dump --split-files --gzip SRR7989766
+fastq-dump --split-files --gzip SRR7989767
+fastq-dump --split-files --gzip SRR7989768
+fastq-dump --split-files --gzip SRR7989769
+fastq-dump --split-files --gzip SRR7989770
+fastq-dump --split-files --gzip SRR7989771
+fastq-dump --split-files --gzip SRR7989772
+fastq-dump --split-files --gzip SRR7989773
+fastq-dump --split-files --gzip SRR7989774
+fastq-dump --split-files --gzip SRR7989775
+fastq-dump --split-files --gzip SRR7989776
+fastq-dump --split-files --gzip SRR7989777
+fastq-dump --split-files --gzip SRR7989778
+fastq-dump --split-files --gzip SRR7989779
+fastq-dump --split-files --gzip SRR7989780
+fastq-dump --split-files --gzip SRR7989781
+fastq-dump --split-files --gzip SRR7989782
+fastq-dump --split-files --gzip SRR7989783
+fastq-dump --split-files --gzip SRR7989784
+fastq-dump --split-files --gzip SRR7989785
+fastq-dump --split-files --gzip SRR7989786
+fastq-dump --split-files --gzip SRR7989787
+fastq-dump --split-files --gzip SRR7989788
+fastq-dump --split-files --gzip SRR7989789
