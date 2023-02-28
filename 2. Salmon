@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=10
 #SBATCH --time=72:00:00
-#SBATCH --mem=70gb
+#SBATCH --mem=120gb
 #SBATCH --output=nelms2019.%j.out
 #SBATCH --error=nelms2019.%j.err
 #SBATCH --mail-type=END,FAIL
@@ -87,4 +87,40 @@ salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --b
 salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989769_2.fastq.gz -2 SRR7989769_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
 
 salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989770_2.fastq.gz -2 SRR7989770_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989772_2.fastq.gz -2 SRR7989772_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989773_2.fastq.gz -2 SRR7989773_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989774_2.fastq.gz -2 SRR7989774_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989775_2.fastq.gz -2 SRR7989775_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989776_2.fastq.gz -2 SRR7989776_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR798977_2.fastq.gz -2 SRR7989777_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989778_2.fastq.gz -2 SRR7989778_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989779_2.fastq.gz -2 SRR7989779_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989780_2.fastq.gz -2 SRR7989780_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989781_2.fastq.gz -2 SRR7989781_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989782_2.fastq.gz -2 SRR7989782_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989783_2.fastq.gz -2 SRR7989783_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989784_2.fastq.gz -2 SRR7989784_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989785_2.fastq.gz -2 SRR7989785_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989786_2.fastq.gz -2 SRR7989786_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989787_2.fastq.gz -2 SRR7989787_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989788_2.fastq.gz -2 SRR7989788_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
+
+salmon alevin -l ISR --whitelist CELseq_whitelist.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989789_2.fastq.gz -2 SRR7989789_1.fastq.gz -p 10 -o outputfile --tgMap TGMap.tsv
 
