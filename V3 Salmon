@@ -16,6 +16,9 @@ module load Salmon/1.9.0-gompi-2020b
 salmon alevin -l ISR --whitelist CELseq_whitelist.txt --expectCells 128 --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989734_2.fastq.gz SRR7989735_2.fastq.gz SRR7989736_2.fastq.gz S$
 
 
+# Used the CELseq_Whitelist instead of the Nelms2019 barcodes 
+# expecCells and forceCells is an option for Salmon 
+# Next Step: use the Nelms2019 barcodes 
 
 
 
