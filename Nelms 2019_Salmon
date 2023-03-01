@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name=Nelms2019_Salmon
+#SBATCH --partition=batch
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=10
+#SBATCH --time=72:00:00
+#SBATCH --mem=120gb
+#SBATCH --output=nelms2019.%j.out
+#SBATCH --error=nelms2019.%j.err
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=tms51355@uga.edu
+
+module load Salmon/1.9.0-gompi-2020b
+
+salmon alevin -l ISR --whitelist CELseq_BC_2019.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i transcriptome_index -1 SRR7989734_1.fastq.gz SRR7989735_1.fastq.gz SRR7989736_1.fastq.gz SRR7989737_1.fastq.gz SRR7989738_1.fastq.gz SRR7989739_1.fastq.gz SRR7989740_1.fastq.gz SRR7989741_1.fastq.gz SRR7989742_1.fastq.gz SRR7989743_1.fastq.gz SRR7989744_1.fastq.gz SRR7989745_1.fastq.gz SRR7989746_1.fastq.gz SRR7989747_1.fastq.gz SRR7989748_1.fastq.gz SRR7989749_1.fastq.gz SRR7989750_1.fastq.gz SRR7989751_1.fastq.gz SRR7989752_1.fastq.gz SRR7989753_1.fastq.gz SRR7989754_1.fastq.gz SRR7989755_1.fastq.gz SRR7989756_1.fastq.gz SRR7989757_1.fastq.gz SRR7989758_1.fastq.gz SRR7989759_1.fastq.gz SRR7989760_1.fastq.gz SRR7989761_1.fastq.gz SRR7989761_1.fastq.gz SRR7989762_1.fastq.gz SRR7989763_1.fastq.gz SRR7989764_1.fastq.gz SRR7989765_1.fastq.gz SRR7989766_1.fastq.gz SRR7989767_1.fastq.gz SRR7989768_1.fastq.gz SRR7989769_1.fastq.gz SRR7989770_1.fastq.gz SRR7989771_1.fastq.gz SRR7989772_1.fastq.gz SRR7989773_1.fastq.gz SRR7989774_1.fastq.gz SRR7989775_1.fastq.gz SRR7989776_1.fastq.gz SRR7989777_1.fastq.gz SRR7989778_1.fastq.gz SRR7989779_1.fastq.gz SRR7989780_1.fastq.gz SRR7989781_1.fastq.gz SRR7989782_1.fastq.gz SRR7989783_1.fastq.gz SRR7989784_1.fastq.gz SRR7989785_1.fastq.gz SRR7989786_1.fastq.gz SRR7989787_1.fastq.gz SRR7989788_1.fastq.gz SRR7989789_1.fastq.gz -2 SRR7989734_2.fastq.gz SRR7989735_2.fastq.gz SRR7989736_2.fastq.gz SRR7989737_2.fastq.gz SRR7989738_2.fastq.gz SRR7989739_2.fastq.gz SRR7989740_2.fastq.gz SRR7989741_2.fastq.gz SRR7989742_2.fastq.gz SRR7989743_2.fastq.gz SRR7989744_2.fastq.gz SRR7989745_2.fastq.gz SRR7989746_2.fastq.gz SRR7989747_2.fastq.gz SRR7989748_2.fastq.gz SRR7989749_2.fastq.gz SRR7989750_2.fastq.gz SRR7989751_2.fastq.gz SRR7989752_2.fastq.gz SRR7989753_2.fastq.gz SRR7989754_2.fastq.gz SRR7989755_2.fastq.gz SRR7989756_2.fastq.gz SRR7989757_2.fastq.gz SRR7989758_2.fastq.gz SRR7989759_2.fastq.gz SRR7989760_2.fastq.gz SRR7989761_2.fastq.gz SRR7989761_2.fastq.gz SRR7989762_2.fastq.gz SRR7989763_2.fastq.gz SRR7989764_2.fastq.gz SRR7989765_2.fastq.gz SRR7989766_2.fastq.gz SRR7989767_2.fastq.gz SRR7989768_2.fastq.gz SRR7989769_2.fastq.gz SRR7989770_2.fastq.gz SRR7989771_2.fastq.gz SRR7989772_2.fastq.gz SRR7989773_2.fastq.gz SRR7989774_2.fastq.gz SRR7989775_2.fastq.gz SRR7989776_2.fastq.gz SRR7989777_2.fastq.gz SRR7989778_2.fastq.gz SRR7989779_2.fastq.gz SRR7989780_2.fastq.gz SRR7989781_2.fastq.gz SRR7989782_2.fastq.gz SRR7989783_2.fastq.gz SRR7989784_2.fastq.gz SRR7989785_2.fastq.gz SRR7989786_2.fastq.gz SRR7989787_2.fastq.gz SRR7989788_2.fastq.gz SRR7989789_2.fastq.gz -p 10 -o 2019_out  --tgMap TGMap.tsv
