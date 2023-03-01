@@ -16,6 +16,7 @@ salmon alevin -l ISR --whitelist nelms2019_bc.txt --umi-geometry 1[1-10] --bc-ge
 
 
 #changes in this script is using the Nelms2019 barcodes (also in github) -- labeled as nelms2019_bc.txt in GACRC 
+# switch the reads, read _1 has the cell barcodes, read _2 has the actual reads 
 
 
 
