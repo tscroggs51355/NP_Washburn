@@ -1,0 +1,80 @@
+
+## Using TXimport to get data into R ##  
+library(tximport)
+setwd("C:/Users/taylo/Desktop/Afd1_Project_Update/Nelms_2019")
+getwd()
+txi_SRR7989734 <- as.matrix(tximport::tximport("SRR7989734_output/alevin/quants_mat.gz",type = "alevin")$counts)
+txi_SRR7989735 <- as.matrix(tximport::tximport("SRR7989735_output/alevin/quants_mat.gz", type = "alevin")$counts)
+txi_SRR7989736 <- as.matrix(tximport::tximport("SRR7989736_output/alevin/quants_mat.gz", type = "alevin")$counts)
+UMI_Count_Matrix <- cbind(txi_SRR7989734, txi_SRR7989735, txi_SRR7989736)
+
+#Head UMI count matrix 
+head(UMI_Count_Matrix)
+                CAGATCTT TCGATCTT CTAGGATT ACTCGATT CATGAGTT CATGCATT GTCTAGTT GTTGCATT
+Zm00001eb093920        0        0        0        0        0        0        0        0
+Zm00001eb033650        0        0        0        0        0        0        0        0
+Zm00001eb392700        0        0        0        0        0        0        0        0
+Zm00001eb166650        0        0        0        0        0        0        0        0
+Zm00001eb305300        0        0        0        0        0        0        0        0
+Zm00001eb181300        0        0        0        0        0        0        0        0
+                TCACGCTT AGCTAGTT TGCAGATT TCACAGTT GAGTCGTT GTGACATT AGACCTCT AGACCTCT
+Zm00001eb093920        0        0        0        0        0        0        0        0
+Zm00001eb033650        0        0        0        0        0        0        0        0
+Zm00001eb392700        0        0        0        0        0        0        0        0
+Zm00001eb166650        0        0        0        0        0        0        0        0
+Zm00001eb305300        0        0        0        0        0        0        0        0
+Zm00001eb181300        0        0        0        0        0        0        0        0
+                TCGATCTT TCACAGTT CTAGGATT CAGATCTT GTCTAGTT GTTGCATT GTGACATT CATGAGTT
+Zm00001eb093920        0        0        0        0        0        0        0        0
+Zm00001eb033650        0        0        0        0        0        0        0        0
+Zm00001eb392700        0        0        0        0        0        0        0        1
+Zm00001eb166650        0        0        0        0        0        0        0        0
+Zm00001eb305300        0        0        0        0        0        0        0        0
+Zm00001eb181300        0        0        0        0        0        0        0        0
+                TCACGCTT GAGTCGTT AGCTAGTT CATGCATT TGCAGATT ACTCGATT GTGACATT ACTCGATT
+Zm00001eb093920        0        0        0        0        0        0        0        0
+Zm00001eb033650        0        0        0        0        0        0        0        0
+Zm00001eb392700        0        0        0        0        0        0        0        0
+Zm00001eb166650        0        0        0        0        0        0        0        0
+Zm00001eb305300        0        0        0        0        0        0        0        0
+Zm00001eb181300        0        0        0        0        0        0        0        0
+                CTAGGATT GTTGCATT AGACCTCT TCGATCTT AGCTAGTT TCACGCTT CATGAGTT CAGATCTT
+Zm00001eb093920        0        0        0        0        0        0        0        0
+Zm00001eb033650        0        0        0        0        0        0        0        0
+Zm00001eb392700        0        0        0        1        0        0        3        0
+Zm00001eb166650        0        0        0        0        0        0        0        0
+Zm00001eb305300        0        0        0        0        0        0        0        0
+Zm00001eb181300        0        0        0        0        0        0        0        0
+                GAGTCGTT CATGCATT TCACAGTT TGCAGATT GTCTAGTT
+Zm00001eb093920        0        0        0        0        0
+Zm00001eb033650        0        0        0        0        0
+Zm00001eb392700        0        0        0        1        0
+Zm00001eb166650        0        0        0        0        0
+Zm00001eb305300        0        0        0        0        0
+Zm00001eb181300        0        0        0        0        0
+
+#colSums UMI Count Matrix 
+colSums(UMI_Count_Matrix)
+CAGATCTT TCGATCTT CTAGGATT ACTCGATT CATGAGTT CATGCATT GTCTAGTT GTTGCATT TCACGCTT AGCTAGTT 
+    3046     6012     8396     6323    14634    15009    14047    18361    23564     1702 
+TGCAGATT TCACAGTT GAGTCGTT GTGACATT AGACCTCT AGACCTCT TCGATCTT TCACAGTT CTAGGATT CAGATCTT 
+    3609     4211      665     3341     7901    14287     9272    21407    17684     6758 
+GTCTAGTT GTTGCATT GTGACATT CATGAGTT TCACGCTT GAGTCGTT AGCTAGTT CATGCATT TGCAGATT ACTCGATT 
+   37913    52445    77142   116988     2033    11847    10208     2627     1993     1097 
+GTGACATT ACTCGATT CTAGGATT GTTGCATT AGACCTCT TCGATCTT AGCTAGTT TCACGCTT CATGAGTT CAGATCTT 
+   13928    33752    20076    26975    25171    50553    35613    59775    84287     1834 
+GAGTCGTT CATGCATT TCACAGTT TGCAGATT GTCTAGTT 
+   16595     1054    16076    16843     2923 
+
+#colSums >0 
+> colSums(UMI_Count_Matrix>0)
+CAGATCTT TCGATCTT CTAGGATT ACTCGATT CATGAGTT CATGCATT GTCTAGTT GTTGCATT TCACGCTT AGCTAGTT 
+    1900     3147     4214     3134     4888     5288     5007     5920     6667     1099 
+TGCAGATT TCACAGTT GAGTCGTT GTGACATT AGACCTCT AGACCTCT TCGATCTT TCACAGTT CTAGGATT CAGATCTT 
+    1797     2520      545     1994     3571     4714     3830     5980     5586     3111 
+GTCTAGTT GTTGCATT GTGACATT CATGAGTT TCACGCTT GAGTCGTT AGCTAGTT CATGCATT TGCAGATT ACTCGATT 
+    7888     8973    10257    11542     1168     4476     3820     1322     1090      796 
+GTGACATT ACTCGATT CTAGGATT GTTGCATT AGACCTCT TCGATCTT AGCTAGTT TCACGCTT CATGAGTT CAGATCTT 
+    5208     7536     6019     7324     6718     9111     7633     9117    10608      968 
+GAGTCGTT CATGCATT TCACAGTT TGCAGATT GTCTAGTT 
+    5496      783     5494     5456     1701 
