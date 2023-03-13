@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name=SRR7989736_output
+#SBATCH --partition=batch
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=10
+#SBATCH --time=72:00:00
+#SBATCH --mem=30gb
+#SBATCH --output=nelms2019.%j.out
+#SBATCH --error=nelms2019.%j.err
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=tms51355@uga.edu
+
+module load Salmon/1.9.0-gompi-2020b
+
+salmon alevin -l ISR --whitelist CELseq_BC_2019.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i ncbi_transcriptome_index -1 SRR7989736_1.fastq.gz -2 SRR7989736_2.fastq.gz -p 10 -o ncbi_SRR7989736_output --tgMap TGMap.tsv
