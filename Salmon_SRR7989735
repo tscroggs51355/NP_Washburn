@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=10
 #SBATCH --time=72:00:00
-#SBATCH --mem=75gb
+#SBATCH --mem=30gb
 #SBATCH --output=nelms2019.%j.out
 #SBATCH --error=nelms2019.%j.err
 #SBATCH --mail-type=END,FAIL
