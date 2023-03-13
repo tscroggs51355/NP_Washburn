@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=Nelms2019_Salmon
+#SBATCH --partition=batch
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=10
+#SBATCH --time=72:00:00
+#SBATCH --mem=120gb
+#SBATCH --output=nelms2019.%j.out
+#SBATCH --error=nelms2019.%j.err
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=tms51355@uga.edu
+
+module load Salmon/1.9.0-gompi-2020b
+
