@@ -12,4 +12,4 @@
 
 module load Salmon/1.9.0-gompi-2020b
 
-salmon alevin -l ISR --whitelist CELseq_BC_2019.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i ncbi_transcriptome_index -1 SRR7989735_1.fastq.gz -2 SRR7989735_2.fastq.gz -p 10 -o ncbi_SRR7989735_output --tgMap TGMap.tsv
+salmon alevin -l ISR --whitelist CELseq_BC_2019.txt --umi-geometry 1[1-10] --bc-geometry 1[11-18] --read-geometry 2[7-end] -i ncbi_transcriptome_index -1 SRR7989735_1.fastq.gz -2 SRR7989735_2.fastq.gz -p 10 -o ncbi_SRR7989735_output --tgMap TGMap2.tsv
