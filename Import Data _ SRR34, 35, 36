@@ -1,0 +1,5 @@
+module load SRA-Toolkit/2.11.1-centos_linux64 #Make note of the version that you are using 
+
+fastq-dump --split-files --gzip SRR7989734
+fastq-dump --split-files --gzip SRR7989735
+fastq-dump --split-files --gzip SRR7989736
