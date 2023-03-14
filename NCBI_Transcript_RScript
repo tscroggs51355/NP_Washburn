@@ -1,0 +1,97 @@
+library(tximport)
+setwd("C:/Users/taylo/Desktop/Afd1_Project_Update/ncbi_SRR_2019/")
+getwd()
+dir()
+txi_SRR7989734 <- as.matrix(tximport::tximport("ncbi_SRR7989734_output/alevin/quants_mat.gz",type = "alevin")$counts)
+txi_SRR7989735 <- as.matrix(tximport::tximport("ncbi_SRR7989735_output/alevin/quants_mat.gz", type = "alevin")$counts)
+txi_SRR7989736 <- as.matrix(tximport::tximport("ncbi_SRR7989736_output/alevin/quants_mat.gz", type = "alevin")$counts)
+UMI_Count_Matrix <- cbind(txi_SRR7989734, txi_SRR7989735, txi_SRR7989736)
+
+head(UMI_Count_Matrix)
+             ACTCGATT CTAGGATT CAGATCTT GTCTAGTT AGCTAGTT CATGCATT TCGATCTT GAGTCGTT GTGACATT
+LOC103644366        1        0        1        0        0        0        0        0        0
+LOC100382519        2        5        2        3        0       11        2        2        0
+LOC103630116        0        0        0        0        0        0        0        0        0
+LOC103649349        0        0        0        0        0        0        0        0        0
+LOC109943579        0        0        0        0        0        0        0        0        0
+LOC109942621        0        0        0        0        0        0        0        0        0
+             GTTGCATT TCACAGTT TGCAGATT TCACGCTT AGACCTCT CATGAGTT GTCTAGTT CAGATCTT CTAGGATT
+LOC103644366        0        0        0        0        0        0        0        0        0
+LOC100382519        3        2        1        6        0        0        5        1        1
+LOC103630116        0        0        0        0        0        0        0        0        0
+LOC103649349        0        0        0        0        0        0        0        0        0
+LOC109943579        0        0        0        0        0        0        0        0        0
+LOC109942621        0        0        0        0        0        1        0        0        0
+             TCGATCTT AGACCTCT GAGTCGTT AGCTAGTT ACTCGATT TGCAGATT CATGCATT TCACGCTT GTGACATT
+LOC103644366        0        0        0        0        0        0        0        0        1
+LOC100382519        2        0        3        0        0        1        0        0        5
+LOC103630116        0        0        0        0        0        0        0        0        0
+LOC103649349        0        0        0        0        0        0        0        0        0
+LOC109943579        0        0        0        0        0        0        0        0        0
+LOC109942621        0        1        1        0        0        0        0        0        0
+             TCACAGTT CATGAGTT GTTGCATT GTTGCATT TCGATCTT AGACCTCT TGCAGATT ACTCGATT GTGACATT
+LOC103644366        1        0        1 0.000000        0        1        0        0        0
+LOC100382519        2        7        4 3.272727        7        1        3       12        3
+LOC103630116        0        0        0 0.000000        0        0        0        0        0
+LOC103649349        0        0        0 0.000000        0        0        0        0        0
+LOC109943579        0        0        0 0.000000        0        0        0        0        0
+LOC109942621        0        0        1 0.000000        0        1        0        0        2
+             GAGTCGTT CTAGGATT AGCTAGTT TCACAGTT CATGCATT GTCTAGTT CAGATCTT TCACGCTT CATGAGTT
+LOC103644366        0        0     1.00        0        0        0        0        0        2
+LOC100382519        2        6     3.25        2        1        0        0        5       26
+LOC103630116        0        0     0.00        0        0        0        0        0        0
+LOC103649349        0        0     0.00        0        0        0        0        0        0
+LOC109943579        0        0     0.00        0        0        0        0        0        0
+LOC109942621        0        0     0.00        0        0        0        0        1        2
+
+colSums(UMI_Count_Matrix)
+ACTCGATT CTAGGATT CAGATCTT GTCTAGTT AGCTAGTT CATGCATT 
+    7559    10731     5715    17216     2403    17584 
+TCGATCTT GAGTCGTT GTGACATT GTTGCATT TCACAGTT TGCAGATT 
+    9314      925     4162    22873     5698     6688 
+TCACGCTT AGACCTCT CATGAGTT GTCTAGTT CAGATCTT CTAGGATT 
+   29807    13012    23135    45777    14449    22566 
+TCGATCTT AGACCTCT GAGTCGTT AGCTAGTT ACTCGATT TGCAGATT 
+   15471    22140    13982    16409     2892     5590 
+CATGCATT TCACGCTT GTGACATT TCACAGTT CATGAGTT GTTGCATT 
+    6749     6989    99885    33868   143836    76842 
+GTTGCATT TCGATCTT AGACCTCT TGCAGATT ACTCGATT GTGACATT 
+   31102    56949    32295    20498    39969    16797 
+GAGTCGTT CTAGGATT AGCTAGTT TCACAGTT CATGCATT GTCTAGTT 
+   18398    23978    48317    21243     1479     5007 
+CAGATCTT TCACGCTT CATGAGTT 
+    5925    74893   119849 
+    
+ colSums(UMI_Count_Matrix>0)
+ACTCGATT CTAGGATT CAGATCTT GTCTAGTT AGCTAGTT CATGCATT 
+    3536     4705     2316     5533     1355     5829 
+TCGATCTT GAGTCGTT GTGACATT GTTGCATT TCACAGTT TGCAGATT 
+    3649      922     2299     6562     2907     2202 
+TCACGCTT AGACCTCT CATGAGTT GTCTAGTT CAGATCTT CTAGGATT 
+    7353     4179     5463     8713     3605     6284 
+TCGATCTT AGACCTCT GAGTCGTT AGCTAGTT ACTCGATT TGCAGATT 
+    4421     5362     4995     4436     1109     1410 
+CATGCATT TCACGCTT GTGACATT TCACAGTT CATGAGTT GTTGCATT 
+    1618     1501    11281     6694    12728     9973 
+GTTGCATT TCGATCTT AGACCTCT TGCAGATT ACTCGATT GTGACATT 
+    7995     9957     7411     6021     8237     5728 
+GAGTCGTT CTAGGATT AGCTAGTT TCACAGTT CATGCATT GTCTAGTT 
+    5931     6562     8553     6041     1095     1998 
+CAGATCTT TCACGCTT CATGAGTT 
+    1275    10061    11560 
+    
+A = UMI_Count_Matrix
+> QC = (colSums(A) >= 10000)&(colSums(A>0)>=2000)
+> mean(QC)
+[1] 0.6666667
+> summary(colSums(A)[QC])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  10731   17308   23004   38129   44325  143836 
+> summary(colSums(A>0)[QC])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3605    5480    6423    7072    8474   12728 
+ 
+ 
+
+
+
